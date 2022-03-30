@@ -23,5 +23,13 @@ class Api {
         return content;
     }
 
+    async search(keyword) {
+        const resp = await fetch(`${BASE_API2}search/movie?api_key=e0beb74fda5c5a616995b8c44754aac4&language=es-ES&page=1&include_adult=false&query=${keyword}`, {
+            method: 'GET',
+        })
+        const content = await resp.json();
+        return content;
+    }
+
 }
 export default new Api();
