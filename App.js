@@ -30,7 +30,7 @@ function App() {
             name="login" component={Login} />
             <Stack.Screen 
             options={{
-                title:"Peliculas populares",
+                title:"Popular movies",
               }}
               // options={({ route }) => ({ title: route.params.name })}
             name="home" component={Home} />

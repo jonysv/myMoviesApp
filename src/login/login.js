@@ -14,24 +14,24 @@ export default class login extends Component {
         loading:false
     }
     login = async() => {
-        // this.setState({
-        //     loading:true
-        // })
-        // let mail = this.state.mail;
-        // let pass = this.state.pass
-        // let response = await api.login(mail,pass);
-        // if (response.error) {
-        //     this.setState({
-        //         loading:false
-        //     })
-        //     alert(response.error)
-        // }else{
-        //     this.setState({
-        //         loading:false
-        //     })
-        //     await store.storeToken(response.token)
+        this.setState({
+            loading:true
+        })
+        let mail = this.state.mail;
+        let pass = this.state.pass
+        let response = await api.login(mail,pass);
+        if (response.error) {
+            this.setState({
+                loading:false
+            })
+            alert(response.error)
+        }else{
+            this.setState({
+                loading:false
+            })
+            await store.storeToken(response.token)
             this.props.navigation.navigate("home")
-        // }
+        }
     }
     render() {
         return (
@@ -53,7 +53,7 @@ export default class login extends Component {
                         style={styles.input}
                     />
                     <Button icon="lock" mode="contained" loading={this.state.loading} onPress={() => this.login()}>
-                        Ingresar
+                        Login
                     </Button>
                 </View>
             </View>

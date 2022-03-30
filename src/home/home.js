@@ -29,7 +29,7 @@ export default class home extends Component {
                     <View style={styles.info}>
                         <Text style={styles.title}
                         numberOfLines={2}>{i.original_title}</Text>
-                        <Text style={styles.subtitle}>Fecha: {i.release_date}</Text>
+                        <Text style={styles.subtitle}>Date: {i.release_date}</Text>
                         <Text
                         numberOfLines={5}
                         >{i.overview}</Text>
@@ -42,13 +42,13 @@ export default class home extends Component {
     }
     async searchMovie(text) {
         if (text == "") {
-            this.props.navigation.setOptions({ title: "Peliculas populares" })
+            this.props.navigation.setOptions({ title: "Popular movies" })
             let movies = await api.movies()
             this.setState({
                 movies: movies.results
             })
         } else {
-            this.props.navigation.setOptions({ title: "Buscando: "+text })
+            this.props.navigation.setOptions({ title: "Searching: "+text })
             let movies = await api.search(text)
             this.setState({
                 movies: movies.results
