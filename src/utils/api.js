@@ -1,9 +1,7 @@
 const BASE_API = "https://reqres.in/"
-
-// import Store from './store.js'
+const BASE_API2 = "https://api.themoviedb.org/3/"
 class Api {
     async login(u, p) {
-        console.log('calling');
         const resp = await fetch(`${BASE_API}api/login`, {
             method: 'POST',
             headers: {
@@ -14,6 +12,14 @@ class Api {
         })
         const content = await resp.json();
         console.log(content);
+        return content;
+    }
+    
+    async movies() {
+        const resp = await fetch(`${BASE_API2}movie/popular?api_key=e0beb74fda5c5a616995b8c44754aac4&language=es-ES&page=1`, {
+            method: 'GET',
+        })
+        const content = await resp.json();
         return content;
     }
 
