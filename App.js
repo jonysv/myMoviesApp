@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Login from './src/login/login';
 import Home from './src/home/home';
+import Details from './src/detail/details';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 const theme = {
@@ -30,10 +31,17 @@ function App() {
             name="login" component={Login} />
             <Stack.Screen 
             options={{
-                title:"Popular movies",
+              headerShown:false,
+
               }}
-              // options={({ route }) => ({ title: route.params.name })}
             name="home" component={Home} />
+            
+            <Stack.Screen 
+            // options={{
+            //   headerShown:false,
+
+            //   }}
+            name="details" component={Details} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaProvider>
