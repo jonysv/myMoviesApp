@@ -30,14 +30,6 @@ class Api {
         const content = await resp.json();
         return content;
     }
-    
-    async recommendations(id) {
-        const resp = await fetch(`${BASE_API2}movie/${id}/recommendations?api_key=e0beb74fda5c5a616995b8c44754aac4`, {
-            method: 'GET',
-        })
-        const content = await resp.json();
-        return content;
-    }
 
 }
 export default new Api();
