@@ -49,7 +49,7 @@ export default class Home extends Component {
             return (
                 <View style={styles.loading}>
                     <Image
-                        source={require('../../assets/gif/loading3.gif')}
+                        source={require('../../assets/gif/loading.gif')}
                         style={styles.logoAnimated}
                     />
                 </View>
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     scroll: {
         flex: 1,
-        backgroundColor:'#1a1a1a'
+        // backgroundColor:'#1a1a1a'
     },
     listItem: {
         marginVertical: hp("2%"),
@@ -188,7 +188,8 @@ const styles = StyleSheet.create({
     loading:{
         flex:1,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        height:"100%",
     },
     logoAnimated2:{
         resizeMode:'contain',

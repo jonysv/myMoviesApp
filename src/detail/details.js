@@ -90,7 +90,7 @@ export default class Details extends Component {
             return (
                 <View style={styles.loading}>
                     <Image
-                        source={require('../../assets/gif/loading3.gif')}
+                        source={require('../../assets/gif/loading.gif')}
                         style={styles.logoAnimated}
                     />
                 </View>
@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
     scroll: {
         flex: 1,
         borderWidth: 2,
-        backgroundColor:'#1a1a1a'
     },
     movie: {
         flexDirection: 'row',
@@ -187,12 +186,13 @@ const styles = StyleSheet.create({
         borderColor: "darkgray"
     },
     loading:{
-        flex:1,
+        // flex:1,
         justifyContent:'center',
         alignItems:'center'
     },
     logoAnimated:{
         resizeMode:'contain',
-        width:"60%"
+        width:400,
+        height:400,
     }
 })

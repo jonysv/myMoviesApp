@@ -29,24 +29,24 @@ export default class Login extends Component {
         splash: true,
     }
     login = async () => {
-        // this.setState({
-        //     loading:true
-        // })
-        // let mail = this.state.mail;
-        // let pass = this.state.pass
-        // let response = await api.login(mail,pass);
-        // if (response.error) {
-        //     this.setState({
-        //         loading:false
-        //     })
-        //     alert(response.error)
-        // }else{
-        //     this.setState({
-        //         loading:false
-        //     })
-        //     await store.storeToken(response.token)
+        this.setState({
+            loading:true
+        })
+        let mail = this.state.mail;
+        let pass = this.state.pass
+        let response = await api.login(mail,pass);
+        if (response.error) {
+            this.setState({
+                loading:false
+            })
+            alert(response.error)
+        }else{
+            this.setState({
+                loading:false
+            })
+            await store.storeToken(response.token)
         this.props.navigation.navigate("home")
-        // }
+        }
     }
     render() {
         if (this.state.splash) {
